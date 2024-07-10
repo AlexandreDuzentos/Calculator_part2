@@ -1,5 +1,7 @@
 package utils;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Utils {
     
@@ -17,5 +19,14 @@ public class Utils {
 		} catch(NumberFormatException e) {
 			return null;
 		}
+	}
+	
+	/* Método responsável por exibir uma Janela de diálogo genérica exibindo um alerta */
+	public static void showAlert(String title, String header, String content, AlertType type) {
+		Alert alert = new Alert(type);
+		alert.setTitle(title);
+		alert.setHeaderText(header);
+		alert.setContentText(content);
+		alert.show();
 	}
 }

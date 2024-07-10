@@ -31,9 +31,7 @@
                   <Insets bottom="15.0" />
                </GridPane.margin>
             </TextField>
-            <Button fx:id="AC" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBtAcClick" prefHeight="35.0" prefWidth="40.0" text="AC" GridPane.rowIndex="1" />
-            <Button fx:id="plusOrMinus" mnemonicParsing="false" onAction="#onBtPlusOrMinusClick" prefHeight="35.0" prefWidth="40.0" text="+/-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="percentage" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="AC" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBtAcClick" prefHeight="35.0" prefWidth="134.0" text="AC" GridPane.rowIndex="1" />
             <Button fx:id="div" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBtDivClick" prefHeight="35.0" prefWidth="40.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button fx:id="seven" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBtSevenClick" prefHeight="35.0" prefWidth="40.0" text="7" GridPane.rowIndex="2" />
             <Button fx:id="eight" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBtEightClick" prefHeight="35.0" prefWidth="40.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />

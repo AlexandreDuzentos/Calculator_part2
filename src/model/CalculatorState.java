@@ -49,8 +49,8 @@ public class CalculatorState {
 	
 	/* Método responsável por setar o estado inicial da calculadora */
 	public void setInicialState() {
-		number1 = null;
-		number2 = null;
+		number1 = 0.0;
+		number2 = 0.0;
 		operation = null;
 		state = false;
 	}

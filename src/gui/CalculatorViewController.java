@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.CalculatorState;
@@ -233,15 +235,21 @@ public class CalculatorViewController implements Initializable {
 	 * state dela.
 	 * */
 	public void addOperation(String buttonValue) {
-		   txtNumber.setText("");
 		   
 		   if(!buttonValue.equals("=")) {
+			   txtNumber.setText("");
 			   state.setOperation(buttonValue);
 			   state.setState(true);
 		   }
 		    
 		   double result = 0.0;
 			if(buttonValue.equals("=")) {
+				if(state.getOperation() == null) {
+					Double defaultValue = 0.0;
+					txtNumber.setText(String.valueOf(defaultValue));
+					state.setNumber1(defaultValue);
+					return;
+				}
 				switch(state.getOperation()) {
 				   case "+":
 					   result = state.getNumber1() + state.getNumber2();
@@ -262,9 +270,13 @@ public class CalculatorViewController implements Initializable {
 					   state.setNumber1(result);
 					   break;
 				   case "/":
+					   if(state.getNumber2() == 0) {
+						   Utils.showAlert("Division by zero",null, "Impossible divide by zero", AlertType.ERROR);
+						   return;
+					   }
 					   result = state.getNumber1() / state.getNumber2();
-					   txtNumber.setText(String.format("%.2f", result));
 					   state.setInicialState();
+					   
 					   state.setNumber1(result);
 					   break;
 				   default:
